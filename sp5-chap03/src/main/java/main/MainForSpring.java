@@ -3,7 +3,8 @@ package main;
 import java.io.IOException;
 import java.util.Scanner;
 import spring.*;
-import config.AppCtx;
+import config.*;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -13,7 +14,7 @@ public class MainForSpring {
 	
 	public static void main(String[] args) throws IOException{
 		Scanner scanner = new Scanner(System.in);
-		ctx=new AnnotationConfigApplicationContext(AppCtx.class);
+		ctx=new AnnotationConfigApplicationContext(AppConf1.class,AppConf2.class);
 		while(true) {
 			System.out.println("명령어를 입력하세요");
 			String command = scanner.nextLine();
