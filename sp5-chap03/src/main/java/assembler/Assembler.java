@@ -8,7 +8,7 @@ public class Assembler {
 	private ChangePasswordService pwdSvc;
 	
 	public Assembler() {
-		memberDao = new MemberDao();
+		memberDao = new MemberDao(); // new cachedMemberDao(); 로 수정해주면 해결
 		regSvc=new MemberRegisterService(memberDao);
 		pwdSvc=new ChangePasswordService();
 		pwdSvc.setMemberDao(memberDao);
