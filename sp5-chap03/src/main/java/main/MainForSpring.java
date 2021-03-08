@@ -14,7 +14,7 @@ public class MainForSpring {
 	
 	public static void main(String[] args) throws IOException{
 		Scanner scanner = new Scanner(System.in);
-		ctx=new AnnotationConfigApplicationContext(AppConf1.class,AppConf2.class);
+		ctx=new AnnotationConfigApplicationContext(AppConf1.class);
 		while(true) {
 			System.out.println("명령어를 입력하세요");
 			String command = scanner.nextLine();
