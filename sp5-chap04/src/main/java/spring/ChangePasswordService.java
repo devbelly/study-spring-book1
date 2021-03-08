@@ -1,13 +1,16 @@
 package spring;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class ChangePasswordService {
 	
 	private MemberDao memberDao;
 	
+	@Autowired	
 	public void setMemberDao(MemberDao memberDao) {
 		this.memberDao=memberDao;
 	}
-	
+	public void setMemberDao() {}
 	public void changePassword(String email,String oldPassword,String newPassword) {
 		Member member = memberDao.selectByEmail(email);
 		if(member==null) {

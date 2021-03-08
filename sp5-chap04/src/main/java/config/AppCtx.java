@@ -18,12 +18,13 @@ public class AppCtx {
 	@Bean
 	public ChangePasswordService changePwdSvc() {
 		ChangePasswordService pwdSvc = new ChangePasswordService();
-		pwdSvc.setMemberDao(memberDao());
+//		pwdSvc.setMemberDao(memberDao()); 제거!
 		return pwdSvc;
 	}
 	
 	@Bean
 	public MemberRegisterService memberRegSvc() {
-		return new MemberRegisterService(memberDao());
+		return new MemberRegisterService();
+//		return new MemberRegisterService(memberDao());
 	}
 }
