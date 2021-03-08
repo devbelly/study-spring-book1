@@ -8,7 +8,6 @@ public class ChangePasswordService {
 	private MemberDao memberDao;
 	
 	@Autowired
-	@Qualifier("mainDatabase")
 	public void setMemberDao(MemberDao memberDao) {
 		this.memberDao=memberDao;
 	}

@@ -12,8 +12,7 @@ import spring.MemberRegisterService;
 public class AppCtx {
 	
 	@Bean
-	@Qualifier("mainDatabase")
-	public MemberDao memberDao1() {
+	public MemberDao memberDao() {
 		return new MemberDao();
 	}
 	@Bean
