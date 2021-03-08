@@ -3,12 +3,13 @@ package spring;
 import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class MemberRegisterService {
 	
 	@Autowired
+	@Qualifier("mainDatabase")
 	private MemberDao memberDao;
-	
 	
 	public MemberRegisterService(MemberDao memberDao) {
 		this.memberDao=memberDao;
