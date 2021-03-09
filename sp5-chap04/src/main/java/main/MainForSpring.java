@@ -31,8 +31,17 @@ public class MainForSpring {
 				processChangeCommand(command.split(" "));
 				continue;
 			}
+			else if(command.startsWith("print")) {
+				processTestPrint();
+				continue;
+			}
 				
 		}
+	}
+	
+	private static void processTestPrint() {
+		testPrint testprint = ctx.getBean("testprint",testPrint.class);
+		testprint.print();
 	}
 	
 	private static void processNewCommand(String[] args) {

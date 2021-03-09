@@ -6,8 +6,10 @@ import org.springframework.context.annotation.Configuration;
 
 import spring.CachedMemberDao;
 import spring.ChangePasswordService;
+import spring.FastMemberDao;
 import spring.MemberDao;
 import spring.MemberRegisterService;
+import spring.testPrint;
 
 @Configuration
 public class AppCtx {
@@ -22,6 +24,11 @@ public class AppCtx {
 		return new CachedMemberDao();
 	}
 	
+//	@Bean
+//	public FastMemberDao fastMemberDao() {
+//		return new FastMemberDao();
+//	}
+	
 	@Bean
 	public ChangePasswordService changePwdSvc() {
 		ChangePasswordService pwdSvc = new ChangePasswordService();
@@ -33,5 +40,10 @@ public class AppCtx {
 	public MemberRegisterService memberRegSvc() {
 		return new MemberRegisterService();
 //		return new MemberRegisterService(memberDao());
+	}
+	
+	@Bean
+	public testPrint testprint() {
+		return new testPrint();
 	}
 }
