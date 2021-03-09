@@ -2,13 +2,15 @@ package spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ChangePasswordService {
 	
 	private MemberDao memberDao;
 	
 	@Autowired
-	public void setMemberDao(CachedMemberDao memberDao) {
+	public void setMemberDao(MemberDao memberDao) {
 		this.memberDao=memberDao;
 	}
 	public void setMemberDao() {}

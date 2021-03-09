@@ -1,8 +1,12 @@
 package spring;
 
 import java.util.Map;
+
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 
+@Component
 public class MemberDao {
 	private static long nextId=0;
 	
