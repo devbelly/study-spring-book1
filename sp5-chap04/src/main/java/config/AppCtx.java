@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import spring.CachedMemberDao;
 import spring.ChangePasswordService;
 import spring.MemberDao;
 import spring.MemberRegisterService;
@@ -12,12 +13,13 @@ import spring.MemberRegisterService;
 public class AppCtx {
 	
 	@Bean
-	public MemberDao memberDao() {
+	public MemberDao memberDao1() {
 		return new MemberDao();
 	}
+	
 	@Bean
-	public MemberDao memberDao2() {
-		return new MemberDao();
+	public CachedMemberDao cachedMemberDao2() {
+		return new CachedMemberDao();
 	}
 	
 	@Bean

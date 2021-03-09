@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 public class MemberRegisterService {
 	
 	@Autowired
+	@Qualifier("cachedMemberDao2")
 	private MemberDao memberDao;
 	
 	public MemberRegisterService(MemberDao memberDao) {

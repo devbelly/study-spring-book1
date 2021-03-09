@@ -8,7 +8,7 @@ public class ChangePasswordService {
 	private MemberDao memberDao;
 	
 	@Autowired
-	public void setMemberDao(MemberDao memberDao) {
+	public void setMemberDao(CachedMemberDao memberDao) {
 		this.memberDao=memberDao;
 	}
 	public void setMemberDao() {}
