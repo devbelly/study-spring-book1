@@ -9,7 +9,7 @@ import chap07.Calculator;
 import chap07.REcCalculator;
 
 @Configuration
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy(proxyTargetClass=true)
 public class AppCtx {
 	@Bean
 	public ExeTimeAspect exeTimeAspect() {
