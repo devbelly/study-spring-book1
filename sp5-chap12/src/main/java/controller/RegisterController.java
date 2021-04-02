@@ -59,9 +59,9 @@ public class RegisterController {
 		}
 	}
 	
-	@InitBinder
-	protected void initBinder(WebDataBinder binder) {
-		binder.setValidator(new RegisterRequestValidator());
-	}
+//	@InitBinder
+//	protected void initBinder(WebDataBinder binder) {
+//		binder.setValidator(new RegisterRequestValidator());
+//	}
 
 }

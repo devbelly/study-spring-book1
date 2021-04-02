@@ -34,10 +34,10 @@ public class MvcConfig implements WebMvcConfigurer {
 		registry.addViewController("/main").setViewName("main");
 	}
 	
-	@Override
-	public Validator getValidator() {
-		return new RegisterRequestValidator();
-	}
+//	@Override
+//	public Validator getValidator() {
+//		return new RegisterRequestValidator();
+//	}
 	
 	@Bean
 	public MessageSource messageSource() {
