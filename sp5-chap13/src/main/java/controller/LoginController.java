@@ -1,7 +1,6 @@
 package controller;
 
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,20 +26,24 @@ public class LoginController {
         this.authService = authService;
     }
 
+//    @GetMapping
+//    public String form(LoginCommand loginCommand,
+//    		@CookieValue(value = "REMEMBER", required = false) Cookie rCookie) {
+//		if (rCookie != null) {
+//			loginCommand.setEmail(rCookie.getValue());
+//			loginCommand.setRememberEmail(true);
+//		}
+//    	return "login/loginForm";
+//    }
+    
     @GetMapping
-    public String form(LoginCommand loginCommand,
-    		@CookieValue(value = "REMEMBER", required = false) Cookie rCookie) {
-		if (rCookie != null) {
-			loginCommand.setEmail(rCookie.getValue());
-			loginCommand.setRememberEmail(true);
-		}
+    public String form(LoginCommand loginCommand) {
     	return "login/loginForm";
     }
-
+    
     @PostMapping
     public String submit(
-    		LoginCommand loginCommand, Errors errors, HttpSession session,
-    		HttpServletResponse response) {
+    		LoginCommand loginCommand, Errors errors, HttpSession session) {
         new LoginCommandValidator().validate(loginCommand, errors);
         if (errors.hasErrors()) {
             return "login/loginForm";
@@ -50,7 +53,7 @@ public class LoginController {
                     loginCommand.getEmail(),
                     loginCommand.getPassword());
             
-            //세션에 authinfo를 넣어야함
+            session.setAttribute("authInfo", authInfo);
 
             return "login/loginSuccess";
         } catch (WrongIdPasswordException e) {
