@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import controller.ChangePwdController;
 import controller.LoginController;
 import controller.LogoutController;
+import controller.MemberDetailController;
+import controller.MemberListController;
 import controller.RegisterController;
 
 @Configuration
@@ -30,6 +32,18 @@ public class ControllerConfig {
 	@Bean
 	public ChangePwdController changePwdController() {
 		ChangePwdController controller = new ChangePwdController();
+		return controller;
+	}
+	
+	@Bean
+	public MemberListController memberListController() {
+		MemberListController controller = new MemberListController();
+		return controller;
+	}
+	
+	@Bean
+	public MemberDetailController memberDetailController() {
+		MemberDetailController controller = new MemberDetailController();
 		return controller;
 	}
 }

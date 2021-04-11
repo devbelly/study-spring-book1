@@ -36,10 +36,6 @@ public class LoginController {
     	return "login/loginForm";
     }
     
-    @GetMapping
-    public String form(LoginCommand loginCommand) {
-    	return "login/loginForm";
-    }
     
     @PostMapping
     public String submit(
